@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<title>jQuery</title>
+</head>
+<body>
+
+	<h1>创建HTML</h1>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"
+    integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+    crossorigin="anonymous"></script>
+    <script>
+    var baidu  = $("<a>百度</a>").attr({
+        text:"百度",
+        href:"http://www.baidu.com"
+    });
+    baidu.appendTo("body");
+</script>
+</body>
+</html>
