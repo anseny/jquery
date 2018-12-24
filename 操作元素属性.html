@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="div1" id="box1" title="isDiv1">我是div</div>
+    <div class="div2" id="box2" title="isDiv2">我是div</div>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+     //补充代码
+     $('div').removeAttr("class title").attr("title",function(index,previousValue){
+             return "newTltle";
+     })
+     .attr("name",function(index,previousValue){
+         return "divs";
+
+     }).attr("alt",function(index,previousValue){
+         return "new";
+
+     });
+     
+    </script>
+</body>
+</html>
