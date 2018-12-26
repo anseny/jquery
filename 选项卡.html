@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body .text .color{
+            background: #6699FF;
+        }
+        .text div{
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class = "text">
+        <div>DOMO</div>
+        <div class = "color">DOMO2</div>
+        <div class = "color">JQUERY</div>
+        <p></p>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        var select = $('div').not(".text"),
+            text = $('.text'),
+            one = $('.text div').eq(0),
+            tow = $('.text div').eq(1),
+            three = $('.text div').eq(2);
+        //console.log(select);
+        select.css({
+            width:100,
+            height:30,
+            //background:"#6699FF",
+            border:"1px solid #6699FF",
+            borderBottom:"0px",
+            float:"left",
+            textAlign:"center",
+            borderRadius:"6px 6px 0 0",
+            // lineHeight:30,
+
+        })
+        $('.text div').eq(0).css({
+            position:"absolute",
+            top:-30,
+            left:10,
+        })
+        $('.text div').eq(1).css({
+            position:"absolute",
+            top:-30,
+            left:120,
+        })
+        $('.text div').eq(2).css({
+            position:"absolute",
+            top:-30,
+            left:230,
+        })
+        text.css({
+            width:500,
+            height:500,
+            border:"1px solid #6699FF",
+            position:"relative",
+            marginTop:"100px",
+            // overflow:"hidden",
+        })
+        // select.on("defaut",function(){
+        //     $(".text div").eq(0).css("background","white")
+        // })
+        // select.trigger("defaut");
+        select.on("changeCard",function(event){
+            select.addClass("color") ;
+            $(event.target).removeClass("color");
+            $("p").text($(event.target).text())
+        }).on("click",function(){
+            $(this).trigger("changeCard");
+        })
+       
+    </script>
+</body>
+</html>
